@@ -21,8 +21,16 @@
     /* Header */
     header { background: var(--color-primary); color: #fff; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 100; }
     .container { width: 90%; max-width: 1200px; margin: auto; }
-    .logo img { height: 40px; }
-    nav { float: right; }
+    .logo img { height: 70px; }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav {
+      margin-left: auto;
+      align-self: center;
+    }
     nav ul { list-style: none; display: flex; }
     nav li { margin-left: 20px; }
     nav a { color: #fff; font-weight: 500; }
@@ -42,8 +50,14 @@
     .hero-logo { width: 80px; margin-bottom: 20px; }
     #hero h1 { color: var(--color-primary); font-size: 3rem; margin-bottom: 10px; background: rgba(254,250,224,0.8); padding: 10px 20px; border-radius: 4px; }
     #hero .tagline { color: var(--color-accent); font-size: 1.2rem; margin-bottom: 20px; background: rgba(254,250,224,0.8); padding: 6px 14px; border-radius: 4px; }
-    #hero .btn { background: var(--color-accent); color: #fff; padding: 12px 24px; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+    #hero .btn { background: var(--color-accent); color: #fff; padding: 12px 24px; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; margin-top: 40px; }
     #hero .btn:hover { background: #d66b00; }
+    #hero .hero-overall-img {
+      max-width: 500px;
+      width: 100%;
+      margin: 60px auto 0;
+      display: block;
+    }
 
     /* Sections */
     section { padding: 80px 0; }
@@ -54,12 +68,30 @@
     #services .service { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
     #services .service h3 { margin: 15px 0 10px; color: var(--color-primary); }
 
+    /* Center mood.png image in the service card */
+    #services .service img[alt="Mood Monitoring"] {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* About / Team */
-    #about .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; }
+    #about .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; justify-content: center; }
     .team-member { text-align: center; }
     .team-member img { border-radius: 50%; width: 100px; height: 100px; object-fit: cover; }
     .team-member h4 { margin-top: 10px; color: var(--color-primary); }
     .team-member p { font-size: 0.9rem; }
+
+    /* Center alice.png and bob.png images and their texts in the team grid */
+    #about .team-grid {
+      justify-content: center;
+      align-items: start;
+    }
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     /* Social Proof */
     #social-proof .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; text-align: center; }
@@ -102,8 +134,7 @@
 
   <!-- Hero + CTA -->
   <section id="hero">
-    <h1>Pawsitive Vibes</h1>
-    <p class="tagline">When you’re feeling low, let paws lift you up – anytime, anywhere.</p>
+    <img src="images/overall.png" alt="Pawsitive Vibes Overall" class="hero-overall-img">
     <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Book a Session</button>
   </section>
 
@@ -132,25 +163,25 @@
 
   <!-- About / Team -->
   <section id="about" class="container">
-    <h2>About Us & Team</h2>
+    <h2>About Us</h2>
     <p style="max-width:800px; margin:0 auto 40px; text-align:center;">
       Pawsitive Vibes is on a mission to make therapy more accessible. Our team combines mental health experts and certified animal handlers to deliver culturally sensitive, tech-enabled support across Singapore.
     </p>
     <div class="team-grid">
       <div class="team-member">
-        <img src="/mnt/data/alice.png" alt="Alice Lew">
-        <h4>Alice Lew</h4>
+        <img src="images/adeline.png" alt="Adeline">
+        <h4>Adeline</h4>
         <p>Co-Founder & Therapist</p>
       </div>
       <div class="team-member">
-        <img src="/mnt/data/bob.png" alt="Bob Tan">
-        <h4>Bob Tan</h4>
-        <p>Head of Animal Handlers</p>
+        <img src="/images/Su.png" alt="Su'aidah">
+        <h4>Su'aidah</h4>
+        <p>Co-Founder & Head of Animal Handlers</p>
       </div>
       <div class="team-member">
-        <img src="/mnt/data/chen.png" alt="Chen Wei">
-        <h4>Chen Wei</h4>
-        <p>Lead Developer</p>
+        <img src="images/bernard.png" alt="Bernard">
+        <h4>Bernard</h4>
+        <p>Co-Founder & Tech Specialist</p>
       </div>
     </div>
   </section>
