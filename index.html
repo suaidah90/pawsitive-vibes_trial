@@ -53,7 +53,7 @@
     #hero .btn { background: var(--color-accent); color: #fff; padding: 12px 24px; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; margin-top: 40px; }
     #hero .btn:hover { background: #d66b00; }
     #hero .hero-overall-img {
-      max-width: 500px;
+      max-width: 700px;
       width: 100%;
       margin: 60px auto 0;
       display: block;
@@ -78,7 +78,7 @@
     /* About / Team */
     #about .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; justify-content: center; }
     .team-member { text-align: center; }
-    .team-member img { border-radius: 50%; width: 100px; height: 100px; object-fit: cover; }
+    .team-member img { border-radius: 50%; width: 100px; height: 100px; object-fit: cover; border: 4px solid #264653; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
     .team-member h4 { margin-top: 10px; color: var(--color-primary); }
     .team-member p { font-size: 0.9rem; }
 
@@ -112,20 +112,30 @@
 
     /* Utility */
     .clearfix::after { content: ""; display: table; clear: both; }
+
+    .logo-text {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #264653;
+      letter-spacing: 1px;
+      font-family: 'Poppins', sans-serif;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="container clearfix">
-      <div class="logo"><img src="images/logo.png" alt="Pawsitive Vibes Logo"></div>
+      <div class="logo" style="display: flex; align-items: center; gap: 16px;">
+        <img src="images/logo.png" alt="Pawsitive Vibes Logo">
+        <span class="logo-text">Pawsitive Vibes</span>
+      </div>
       <nav>
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#services">Products</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#social-proof">Stats</a></li>
-          <li><a href="#model">Canvas</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -134,7 +144,7 @@
 
   <!-- Hero + CTA -->
   <section id="hero">
-    <img src="images/overall.png" alt="Pawsitive Vibes Overall" class="hero-overall-img">
+    <img src="images/overall2.png" alt="Pawsitive Vibes Overall" class="hero-overall-img">
     <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Book a Session</button>
   </section>
 
@@ -203,12 +213,6 @@
         <span>App Rating</span>
       </div>
     </div>
-  </section>
-
-  <!-- Business Model Canvas -->
-  <section id="model" class="container">
-    <h2>Our Blueprint</h2>
-    <img src="/mnt/data/c88d02eb-0415-45ae-8e91-a3a02d1e7867.png" alt="Business Model Canvas">
   </section>
 
   <!-- Contact / Conversion -->
