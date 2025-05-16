@@ -120,9 +120,50 @@
       letter-spacing: 1px;
       font-family: 'Poppins', sans-serif;
     }
+
+    /* Floating social media banner */
+    .social-banner {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: #fff;
+      border-radius: 0 16px 16px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      padding: 12px 8px 12px 6px;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+    }
+    .social-banner a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #FEFAE0;
+      transition: background 0.2s;
+      font-size: 1.5rem;
+      color: #264653;
+      border: 1.5px solid #264653;
+    }
+    .social-banner a:hover {
+      background: #F77F00;
+      color: #fff;
+      border-color: #F77F00;
+    }
   </style>
 </head>
 <body>
+  <div class="social-banner">
+    <a href="https://x.com" target="_blank" title="X (Twitter)"><img src="images/X twitter.png" alt="X (Twitter)" style="width:24px;height:24px;display:block;"></a>
+    <a href="https://instagram.com" target="_blank" title="Instagram"><img src="images/IG.png" alt="Instagram" style="width:24px;height:24px;display:block;"></a>
+    <a href="https://facebook.com" target="_blank" title="Facebook"><img src="images/fb.png" alt="Facebook" style="width:24px;height:24px;display:block;"></a>
+    <a href="https://tiktok.com" target="_blank" title="TikTok"><img src="images/tiktok.png" alt="TikTok" style="width:24px;height:24px;display:block;"></a>
+  </div>
   <!-- Header -->
   <header>
     <div class="container clearfix">
