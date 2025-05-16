@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pawsitive Vibes</title>
+  <style>
+    /* Theme Variables */
+    :root {
+      --color-bg: #FEFAE0;
+      --color-primary: #264653;
+      --color-accent: #F77F00;
+      --color-text: #333;
+    }
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--color-bg); font-family: 'Poppins', sans-serif; color: var(--color-text); }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Header */
+    header { background: var(--color-primary); color: #fff; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 100; }
+    .container { width: 90%; max-width: 1200px; margin: auto; }
+    .logo img { height: 40px; }
+    nav { float: right; }
+    nav ul { list-style: none; display: flex; }
+    nav li { margin-left: 20px; }
+    nav a { color: #fff; font-weight: 500; }
+    nav a:hover { text-decoration: underline; }
+
+    /* Hero */
+    #hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 60px;
+      background: url('/mnt/data/ae016826-8df7-4ac3-b9a1-7495c3b44b16.png') center/cover no-repeat;
+    }
+    .hero-logo { width: 80px; margin-bottom: 20px; }
+    #hero h1 { color: var(--color-primary); font-size: 3rem; margin-bottom: 10px; background: rgba(254,250,224,0.8); padding: 10px 20px; border-radius: 4px; }
+    #hero .tagline { color: var(--color-accent); font-size: 1.2rem; margin-bottom: 20px; background: rgba(254,250,224,0.8); padding: 6px 14px; border-radius: 4px; }
+    #hero .btn { background: var(--color-accent); color: #fff; padding: 12px 24px; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+    #hero .btn:hover { background: #d66b00; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    h2 { text-align: center; color: var(--color-primary); margin-bottom: 40px; }
+
+    /* Products & Services */
+    #services .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    #services .service { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
+    #services .service h3 { margin: 15px 0 10px; color: var(--color-primary); }
+
+    /* About / Team */
+    #about .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; }
+    .team-member { text-align: center; }
+    .team-member img { border-radius: 50%; width: 100px; height: 100px; object-fit: cover; }
+    .team-member h4 { margin-top: 10px; color: var(--color-primary); }
+    .team-member p { font-size: 0.9rem; }
+
+    /* Social Proof */
+    #social-proof .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; text-align: center; }
+    .proof-item p { font-weight: bold; color: var(--color-primary); font-size: 2rem; margin-bottom: 8px; }
+    .proof-item span { display: block; color: var(--color-text); }
+
+    /* Model Canvas */
+    #model img { border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin: 0 auto; display: block; max-width: 90%; }
+
+    /* Contact / Conversion */
+    #contact form { max-width: 600px; margin: auto; display: flex; flex-direction: column; }
+    #contact form input, #contact form textarea { margin-bottom: 15px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
+    #contact form button { padding: 12px; border: none; background: var(--color-accent); color: #fff; font-size: 1rem; border-radius: 4px; cursor: pointer; }
+    #contact form button:hover { background: #d66b00; }
+
+    /* Footer */
+    footer { background: var(--color-primary); color: #fff; text-align: center; padding: 20px 0; }
+
+    /* Utility */
+    .clearfix::after { content: ""; display: table; clear: both; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container clearfix">
+      <div class="logo"><img src="/mnt/data/ae016826-8df7-4ac3-b9a1-7495c3b44b16.png" alt="Pawsitive Vibes Logo"></div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#social-proof">Stats</a></li>
+          <li><a href="#model">Canvas</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero + CTA -->
+  <section id="hero">
+    <h1>Pawsitive Vibes</h1>
+    <p class="tagline">When you’re feeling low, let paws lift you up – anytime, anywhere.</p>
+    <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Book a Session</button>
+  </section>
+
+  <!-- Products & Services -->
+  <section id="services" class="container">
+    <h2>Products & Services</h2>
+    <div class="service-grid">
+      <div class="service">
+        <img src="/mnt/data/therapy.png" alt="On-Demand Pet Therapy">
+        <h3>On-Demand Pet Therapy</h3>
+        <p>Certified therapy animals visit you when you need an emotional boost.</p>
+      </div>
+      <div class="service">
+        <img src="/mnt/data/mood.png" alt="Mood Monitoring">
+        <h3>Mood Monitoring</h3>
+        <p>Real-time mental health tracking via our app helps trigger sessions.</p>
+      </div>
+      <div class="service">
+        <img src="/mnt/data/corp.png" alt="Corporate Wellness">
+        <h3>Corporate Wellness Programs</h3>
+        <p>Custom plans for workplaces to support employee mental health.</p>
+      
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Team -->
+  <section id="about" class="container">
+    <h2>About Us & Team</h2>
+    <p style="max-width:800px; margin:0 auto 40px; text-align:center;">
+      Pawsitive Vibes is on a mission to make therapy more accessible. Our team combines mental health experts and certified animal handlers to deliver culturally sensitive, tech-enabled support across Singapore.
+    </p>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="/mnt/data/alice.png" alt="Alice Lew">
+        <h4>Alice Lew</h4>
+        <p>Co-Founder & Therapist</p>
+      </div>
+      <div class="team-member">
+        <img src="/mnt/data/bob.png" alt="Bob Tan">
+        <h4>Bob Tan</h4>
+        <p>Head of Animal Handlers</p>
+      </div>
+      <div class="team-member">
+        <img src="/mnt/data/chen.png" alt="Chen Wei">
+        <h4>Chen Wei</h4>
+        <p>Lead Developer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof / Key Metrics -->
+  <section id="social-proof" class="container">
+    <h2>Our Impact</h2>
+    <div class="proof-grid">
+      <div class="proof-item">
+        <p>1K+</p>
+        <span>Sessions Delivered</span>
+      </div>
+      <div class="proof-item">
+        <p>95%</p>
+        <span>Client Satisfaction</span>
+      </div>
+      <div class="proof-item">
+        <p>4.8/5</p>
+        <span>App Rating</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Model Canvas -->
+  <section id="model" class="container">
+    <h2>Our Blueprint</h2>
+    <img src="/mnt/data/c88d02eb-0415-45ae-8e91-a3a02d1e7867.png" alt="Business Model Canvas">
+  </section>
+
+  <!-- Contact / Conversion -->
+  <section id="contact" class="container">
+    <h2>Get in Touch</h2>
+    <form id="contactForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Pawsitive Vibes. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    // Form validation & feedback
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      alert(`Thank you, ${name}! We'll be in touch soon.`);
+      this.reset();
+    });
+  </script>
+</body>
+</html>
